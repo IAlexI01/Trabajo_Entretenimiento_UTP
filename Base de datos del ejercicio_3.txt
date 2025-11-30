@@ -1,0 +1,58 @@
+CREATE DATABASE instituto;
+
+USE instituto;
+
+CREATE TABLE `curso` (
+    `idCurso` int(11) NOT NULL AUTO_INCREMENT,
+    `nombre` varchar(45) DEFAULT NULL,
+    `precio` double DEFAULT NULL,
+    `docente` varchar(45) DEFAULT NULL,
+    `lugar` varchar(45) DEFAULT NULL,
+    PRIMARY KEY (`idCurso`)
+);
+
+CREATE TABLE `tbalumno` (
+    `idtbalumno` int(11) NOT NULL AUTO_INCREMENT,
+    `nombre` varchar(45) DEFAULT NULL,
+    `apellido` varchar(45) DEFAULT NULL,
+    `edad` int(11) DEFAULT NULL,
+    PRIMARY KEY (`idtbalumno`)
+);
+
+CREATE TABLE `tbempleado` (
+    `cod_emp` int(11) NOT NULL AUTO_INCREMENT,
+    `nom_emp` varchar(30) DEFAULT NULL,
+    `ape_emp` varchar(30) DEFAULT NULL,
+    `login_emp` varchar(20) DEFAULT NULL,
+    `clave_emp` varchar(15) DEFAULT NULL,
+    PRIMARY KEY (`cod_emp`)
+);
+
+CREATE TABLE `tbproducto` (
+    `idtbproducto` int(11) NOT NULL AUTO_INCREMENT,
+    `nombre` varchar(45) DEFAULT NULL,
+    `precio` double DEFAULT NULL,
+    `stock` int(11) DEFAULT NULL,
+    PRIMARY KEY (`idtbproducto`)
+);
+
+INSERT INTO `curso` (`idCurso`, `nombre`, `precio`, `docente`, `lugar`) VALUES
+(1, 'ipi', 100, 'Luis Felipe', 'Lima'),
+(2, 'lp2', 200, 'Luis Felipe', 'Lima');
+
+INSERT INTO `tbalumno` (`idtbalumno`, `nombre`, `apellido`, `edad`) VALUES
+(1, 'Luciana', 'Jacinto', 18),
+(2, 'Leon', 'Arcos Castillo', 25),
+(7, 'Jaime', 'Soto Paco', 22),
+(8, '2323', '2323', 333),
+(9, 'Carlos', 'Perez Salas', 18),
+(10, 'JUAN', 'PEREZ PEREZ', 25);
+
+INSERT INTO `tbempleado` (`cod_emp`, `nom_emp`, `ape_emp`, `login_emp`, `clave_emp`) VALUES
+(1, 'Carlos', 'Macedo', 'cmacedo', '123456'),
+(2, 'Luis', 'Carpio', 'lcarpio', '654321'),
+(7, 'Arturo', 'Delgado', 'adelgado', '12345');
+
+INSERT INTO `tbproducto` (`idtbproducto`, `nombre`, `precio`, `stock`) VALUES
+(1, 'Cuaderno', 2, 200),
+(2, 'Leche', 3, 500);
