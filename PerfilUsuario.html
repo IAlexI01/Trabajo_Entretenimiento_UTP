@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Perfil - Conexión Cultural</title>
+    <link rel="stylesheet" href="../Css/Estilos_Usuario.css">
+    <script src="../Js/JS_PerfilUsuario.js" defer></script>
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="header-content">
+            <h1>Conexión Cultural</h1>
+            <p>Mi Perfil - <span id="userName">${usuario.nombre}</span></p>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/usuario/perfil">Mi Perfil</a></li>
+                <li><a href="../Usuario/MisEntradas.html">Mis Entradas</a></li>
+                <li><a href="../Usuario/Favoritos.html">Favoritos</a></li>
+                <li><a href="../Usuario/DashboardUsuario.html">Inicio</a></li>
+                <li><a href="/cine/usuario">Cine</a></li>
+                <li><a href="../Usuario/Podcast_Usuario.html">Podcast</a></li>
+                <li><a href="../Usuario/EntradasUsuario.html">Entradas</a></li>
+                <li><a href="../Usuario/Artes_Usuario.html">Artes</a></li>
+                <li><a href="../Usuario/Reportes_Usuario.html">Mis reportes</a></li>
+                <li><a href="../index.html" id="logoutLink">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="perfil-main">
+        <section class="perfil-container">
+            <h2>Mi Información</h2>
+            
+            <div class="perfil-columns">
+                <div class="perfil-info">
+                    <h3>Datos Personales</h3>
+                    <form id="formPerfil" action="/usuario/actualizar" method="POST">
+                        <label>Nombre</label>
+                        <input type="text" id="nombre" name="nombre" value="${usuario.nombre}" required>
+                        <label>Apellido</label>
+                        <input type="text" id="apellido" name="apellido" value="${usuario.apellido}" required>
+                        <label>Email</label>
+                        <input type="email" id="email" name="email" value="${usuario.email}" readonly>
+                        <label>Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" value="${usuario.telefono}" placeholder="+51 987 654 321">
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Actualizar</button>
+                            <button type="reset" class="btn-secondary">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="perfil-security">
+                    <h3>Seguridad</h3>
+                    <form id="formPassword" action="/usuario/cambiar-password" method="POST">
+                        <label>Contraseña Actual</label>
+                        <input type="password" id="currentPassword" name="currentPassword" required>
+                        <label>Nueva Contraseña</label>
+                        <input type="password" id="newPassword" name="newPassword" minlength="6" required>
+                        <label>Confirmar Nueva Contraseña</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Cambiar</button>
+                            <button type="reset" class="btn-secondary">Limpiar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="user-stats">
+            <h3>Estadísticas Personales</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🎫</div>
+                    <div class="stat-info">
+                        <h4>Entradas Compradas</h4>
+                        <p class="stat-number">${totalEntradas}</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">❤️</div>
+                    <div class="stat-info">
+                        <h4>Favoritos</h4>
+                        <p class="stat-number">${totalFavoritos}</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-info">
+                        <h4>Eventos Asistidos</h4>
+                        <p class="stat-number">${eventosAsistidos}</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-info">
+                        <h4>Miembro Desde</h4>
+                        <p class="stat-number">Oct 2025</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="user-activities">
+            <h3>Mis Actividades Recientes</h3>
+            <ul class="activities-list">
+                <li class="activity-item">
+                    <span>🎬</span> Compra de Entradas - <strong>“Los Andes en Cine”</strong> — 15/12/2025 — S/30.00
+                </li>
+                <li class="activity-item">
+                    <span>🎨</span> Visita a <strong>“Arte Andino Contemporáneo”</strong> — 12/12/2025 — Gratis
+                </li>
+                <li class="activity-item">
+                    <span>🎙️</span> Podcast escuchado — <strong>“Historias de Arequipa Colonial”</strong> — 10/12/2025
+                </li>
+                <li class="activity-item">
+                    <span>🎵</span> Entradas para <strong>“Concierto Tradicional”</strong> — 08/12/2025 — S/45.00
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="dashboard-footer">
+        <p>&copy; 2025 Conexión Cultural - Universidad de Arequipa</p>
+    </footer>
+</body>
+</html>
