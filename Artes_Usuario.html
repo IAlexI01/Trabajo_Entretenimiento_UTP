@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Conexión Cultural - Artes</title>
+    <link rel="stylesheet" href="../Css/Estilos.css">
+    <link rel="stylesheet" href="../Css/Estilos_Artes.css">
+    <script src="../Js/JS_Artes_Usuario.js" defer></script>
+    <script src="../Js/JS_Fondo_Arte.js"></script>
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="header-content">
+            <h1>Conexión Cultural</h1>
+            <p>Explora las exposiciones de arte disponibles</p>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="PerfilUsuario.html">Mi Perfil</a></li>
+                <li><a href="MisEntradas.html">Mi Entradas</a></li>
+                <li><a href="Favoritos.html">Favoritos</a></li>
+                <li><a href="DashboardUsuario.html">Inicio</a></li>
+                <li><a href="CineUsuario.html">Cine</a></li>
+                <li><a href="Podcast_Usuario.html">Podcast</a></li>
+                <li><a href="EntradasUsuario.html">Entradas</a></li>
+                <li><a href="Artes_Usuario.html">Artes</a></li>
+                <li><a href="Reportes_Usuario.html">Mis reportes</a></li>
+                <li><a href="#" id="logoutLink">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="artes-main">
+        <h2>Exposiciones de Arte</h2>
+
+        <div class="filtros-exposiciones">
+            <form action="../artes/buscar" method="GET">
+                <input type="text" name="q" placeholder="Buscar exposición...">
+                <select name="categoria">
+                    <option value="todos">Todos los tipos</option>
+                    <option value="pintura">Pintura</option>
+                    <option value="escultura">Escultura</option>
+                    <option value="fotografia">Fotografía</option>
+                </select>
+                <button type="submit" class="btn-primary">Buscar</button>
+            </form>
+        </div>
+
+        <section class="exposiciones-list">
+            <div class="exposicion-card">
+                <img src="../img/arte1.jpg" alt="Arte Andino">
+                <h3>Arte Andino Contemporáneo</h3>
+                <p><strong>Artista:</strong> Carlos Mendoza</p>
+                <p><strong>Fechas:</strong> 01/12/2025 - 15/01/2026</p>
+                <p><strong>Tipo:</strong> Pintura</p>
+                
+                <form action="../artes/detalle" method="GET">
+                    <input type="hidden" name="id" value="1">
+                    <button type="submit" class="btn-primary">Ver Detalles</button>
+                </form>
+
+                <form action="../artes/reservar" method="POST">
+                    <input type="hidden" name="id" value="1">
+                    <input type="number" name="cantidad" min="1" value="1" required>
+                    <button type="submit" class="btn-secondary">Reservar</button>
+                </form>
+            </div>
+
+            <div class="exposicion-card">
+                <img src="../img/fotografia.jpg" alt="Fotografía Urbana">
+                <h3>Fotografía Urbana Arequipeña</h3>
+                <p><strong>Artista:</strong> Ana Torres</p>
+                <p><strong>Fechas:</strong> 20/01/2026 - 28/02/2026</p>
+                <p><strong>Tipo:</strong> Fotografía</p>
+
+                <form action="../artes/detalle" method="GET">
+                    <input type="hidden" name="id" value="2">
+                    <button type="submit" class="btn-primary">Ver Detalles</button>
+                </form>
+
+                <form action="../artes/reservar" method="POST">
+                    <input type="hidden" name="id" value="2">
+                    <input type="number" name="cantidad" min="1" value="1" required>
+                    <button type="submit" class="btn-secondary">Reservar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="dashboard-footer">
+        <p>&copy; 2025 Conexión Cultural - Universidad de Arequipa</p>
+    </footer>
+</body>
+</html>
+b

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mis Favoritos - Conexión Cultural</title>
+    <link rel="stylesheet" href="../Css/Estilos_Favoritos.css">
+    <script src="../Js/JS_Favoritos.js" defer></script>
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="header-content">
+            <h1>Conexión Cultural</h1>
+            <p>Mis Favoritos - <span id="userName"></span></p>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="PerfilUsuario.html">Mi Perfil</a></li>
+                <li><a href="MisEntradas.html">Mi Entradas</a></li>
+                <li><a href="Favoritos.html">Favoritos</a></li>
+                <li><a href="DashboardUsuario.html">Inicio</a></li>
+                <li><a href="CineUsuario.html">Cine</a></li>
+                <li><a href="Podcast_Usuario.html">Podcast</a></li>
+                <li><a href="EntradasUsuario.html">Entradas</a></li>
+                <li><a href="Artes_Usuario.html">Artes</a></li>
+                <li><a href="Reportes_Usuario.html">Mis reportes</a></li>
+                <li><a href="#" id="logoutLink">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="favoritos-main">
+        <h2>Mis Contenidos Favoritos</h2>
+        
+        <div class="favoritos-tabs">
+            <button class="tab-btn active" onclick="showFavorites('peliculas')">🎬 Películas</button>
+            <button class="tab-btn" onclick="showFavorites('exposiciones')">🎨 Exposiciones</button>
+            <button class="tab-btn" onclick="showFavorites('podcasts')">🎙️ Podcasts</button>
+        </div>
+        
+        <!-- Películas Favoritas -->
+        <div id="peliculas-fav" class="favorites-section">
+            <h3>Películas Favoritas</h3>
+            <div class="favorites-grid">
+                <div class="favorite-item">
+                    <div class="fav-image">
+                        <img src="../images/cine-andes.jpg" alt="Los Andes en Cine">
+                        <button class="fav-remove" onclick="removeFavorite('pelicula', 'andes')">❤️</button>
+                    </div>
+                    <div class="fav-info">
+                        <h4>Los Andes en Cine</h4>
+                        <p>Documental • 120 min</p>
+                        <p>📅 18/12/2025 - 19:30</p>
+                        <div class="fav-actions">
+                            <button class="btn-small" onclick="comprarEntradas('andes')">Comprar Entradas</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="favorite-item">
+                    <div class="fav-image">
+                        <img src="../images/leyenda-pisco.jpg" alt="La Leyenda del Pisco">
+                        <button class="fav-remove" onclick="removeFavorite('pelicula', 'pisco')">❤️</button>
+                    </div>
+                    <div class="fav-info">
+                        <h4>La Leyenda del Pisco</h4>
+                        <p>Comedia • 95 min</p>
+                        <p>📅 20/12/2025 - 18:00</p>
+                        <div class="fav-actions">
+                            <button class="btn-small" onclick="comprarEntradas('pisco')">Comprar Entradas</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Exposiciones Favoritas -->
+        <div id="exposiciones-fav" class="favorites-section" style="display: none;">
+            <h3>Exposiciones Favoritas</h3>
+            <div class="favorites-grid">
+                <div class="favorite-item">
+                    <div class="fav-image">
+                        <img src="../images/arte-andino.jpg" alt="Arte Andino Contemporáneo">
+                        <button class="fav-remove" onclick="removeFavorite('exposicion', 'andino')">❤️</button>
+                    </div>
+                    <div class="fav-info">
+                        <h4>Arte Andino Contemporáneo</h4>
+                        <p>Arte Moderno • Hasta 15/01/2026</p>
+                        <p>📍 Galería de Arte Central</p>
+                        <div class="fav-actions">
+                            <button class="btn-small" onclick="verDetallesExposicion('andino')">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Podcasts Favoritos -->
+        <div id="podcasts-fav" class="favorites-section" style="display: none;">
+            <h3>Podcasts Favoritos</h3>
+            <div class="favorites-list">
+                <div class="podcast-fav-item">
+                    <div class="podcast-info">
+                        <h4>Historias de Arequipa Colonial</h4>
+                        <p>Carlos Méndez • 45 min • Historia</p>
+                        <div class="podcast-actions">
+                            <button class="btn-small" onclick="escucharPodcast('historia-arequipa')">▶️ Escuchar</button>
+                            <button class="btn-small" onclick="removeFavorite('podcast', 'historia-arequipa')">❤️ Quitar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="podcast-fav-item">
+                    <div class="podcast-info">
+                        <h4>Arte Contemporáneo en los Andes</h4>
+                        <p>María Torres • 35 min • Arte</p>
+                        <div class="podcast-actions">
+                            <button class="btn-small" onclick="escucharPodcast('arte-andes')">▶️ Escuchar</button>
+                            <button class="btn-small" onclick="removeFavorite('podcast', 'arte-andes')">❤️ Quitar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="empty-favorites" id="empty-favorites" style="display: none;">
+            <div class="empty-state">
+                <h3>No tienes favoritos aún</h3>
+                <p>Explora nuestro contenido y agrega tus películas, exposiciones y podcasts favoritos.</p>
+                <button class="btn-primary" onclick="explorarContenido()">Explorar Contenido</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="dashboard-footer">
+        <p>&copy; 2025 Conexión Cultural - Universidad de Arequipa</p>
+    </footer>
+</body>
+</html>

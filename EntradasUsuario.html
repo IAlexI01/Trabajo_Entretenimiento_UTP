@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Conexión Cultural - Mis Entradas</title>
+    <link rel="stylesheet" href="../Css/Estilos_EntradasUsuario.css">
+    <script src="../Js/JS_EntradasUsuario.js" defer></script>
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="header-content">
+            <h1>Conexión Cultural</h1>
+            <p>Mis Entradas 🎟️</p>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="PerfilUsuario.html">Mi Perfil</a></li>
+                <li><a href="MisEntradas.html">Mi Entradas</a></li>
+                <li><a href="Favoritos.html">Favoritos</a></li>
+                <li><a href="DashboardUsuario.html">Inicio</a></li>
+                <li><a href="CineUsuario.html">Cine</a></li>
+                <li><a href="Podcast_Usuario.html">Podcast</a></li>
+                <li><a href="EntradasUsuario.html">Entradas</a></li>
+                <li><a href="Artes_Usuario.html">Artes</a></li>
+                <li><a href="Reportes_Usuario.html">Mis reportes</a></li>
+                <li><a href="#" id="logoutLink">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="entradas-main">
+        <h2>Mis Entradas Adquiridas</h2>
+        <p class="intro-text">Aquí podrás ver tus compras recientes y descargar tus entradas.</p>
+
+        <div class="ventas-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Evento</th>
+                        <th>Cantidad</th>
+                        <th>Fecha Compra</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>VEN-001</td>
+                        <td>Cine: Los Andes en Cine</td>
+                        <td>2</td>
+                        <td>15/12/2025</td>
+                        <td><button class="btn-primary">Descargar</button></td>
+                    </tr>
+                    <tr>
+                        <td>VEN-002</td>
+                        <td>Concierto: Música Tradicional Arequipeña</td>
+                        <td>3</td>
+                        <td>17/12/2025</td>
+                        <td><button class="btn-primary">Descargar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="dashboard-footer">
+        <p>&copy; 2025 Conexión Cultural - Universidad de Arequipa</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Conexión Cultural - Podcasts</title>
+    <link rel="stylesheet" href="../Css/Estilos_Podcast.css">
+    <script src="../Js/JS_Podcast_Usuario.js" defer></script>
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="header-content">
+            <h1>🎧 Conexión Cultural</h1>
+            <p>Explora nuestros Podcasts Culturales</p>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="PerfilUsuario.html">Mi Perfil</a></li>
+                <li><a href="MisEntradas.html">Mi Entradas</a></li>
+                <li><a href="Favoritos.html">Favoritos</a></li>
+                <li><a href="DashboardUsuario.html">Inicio</a></li>
+                <li><a href="CineUsuario.html">Cine</a></li>
+                <li><a href="Podcast_Usuario.html">Podcast</a></li>
+                <li><a href="EntradasUsuario.html">Entradas</a></li>
+                <li><a href="Artes_Usuario.html">Artes</a></li>
+                <li><a href="Reportes_Usuario.html">Mis reportes</a></li>
+                <li><a href="#" id="logoutLink">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="podcast-main">
+    <h2>Podcasts Disponibles</h2>
+    <div class="podcast-list">
+        <div class="podcast-items"> <!-- 👈 ESTE WRAPPER ES LA CLAVE -->
+            <article class="podcast-item">
+                <h4>Historias de Arequipa Colonial</h4>
+                <p><strong>Anfitrión:</strong> Carlos Méndez | <strong>Duración:</strong> 45 min</p>
+                <p><strong>Categoría:</strong> Historia | <strong>Publicado:</strong> 10/12/2025</p>
+                <audio controls>
+                    <source src="#" type="audio/mp3">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </article>
+
+            <article class="podcast-item">
+                <h4>Arte Contemporáneo en los Andes</h4>
+                <p><strong>Anfitrión:</strong> María Torres | <strong>Duración:</strong> 35 min</p>
+                <p><strong>Categoría:</strong> Arte | <strong>Publicado:</strong> 05/12/2025</p>
+                <audio controls>
+                    <source src="#" type="audio/mp3">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </article>
+        </div>
+    </div>
+    </main>
+
+
+    <footer class="dashboard-footer">
+        <p>&copy; 2025 Conexión Cultural - Universidad de Arequipa</p>
+    </footer>
+</body>
+</html>

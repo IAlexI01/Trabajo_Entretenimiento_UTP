@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mis Entradas - Conexión Cultural</title>
+    <link rel="stylesheet" href="../Css/Estilos_MisEntradas.css">
+    <script src="../Js/JS_MisEntradas.js" defer></script>
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="header-content">
+            <h1>Conexión Cultural</h1>
+            <p>Mis Entradas - <span id="userName"></span></p>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="PerfilUsuario.html">Mi Perfil</a></li>
+                <li><a href="MisEntradas.html">Mi Entradas</a></li>
+                <li><a href="Favoritos.html">Favoritos</a></li>
+                <li><a href="DashboardUsuario.html">Inicio</a></li>
+                <li><a href="CineUsuario.html">Cine</a></li>
+                <li><a href="Podcast_Usuario.html">Podcast</a></li>
+                <li><a href="EntradasUsuario.html">Entradas</a></li>
+                <li><a href="Artes_Usuario.html">Artes</a></li>
+                <li><a href="Reportes_Usuario.html">Mis reportes</a></li>
+                <li><a href="#" id="logoutLink">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="mis-entradas-main">
+        <h2>Mis Entradas Compradas</h2>
+        
+        <div class="entradas-filters">
+            <button class="btn-secondary active" onclick="filterTickets('todas')">Todas</button>
+            <button class="btn-secondary" onclick="filterTickets('activas')">Activas</button>
+            <button class="btn-secondary" onclick="filterTickets('usadas')">Usadas</button>
+            <button class="btn-secondary" onclick="filterTickets('canceladas')">Canceladas</button>
+        </div>
+        
+        <div class="entradas-list">
+
+            <form action="../entradas/comprar" method="post" class="entrada-card activa">
+                <div class="entrada-header">
+                    <h3>🎬 Los Andes en Cine</h3>
+                    <span class="entrada-status activa">Activa</span>
+                </div>
+                <div class="entrada-details">
+                    <p><strong>Fecha:</strong> 18/12/2025 - 19:30</p>
+                    <p><strong>Lugar:</strong> Cine Cultural - Sala 2</p>
+                    <p><strong>Asientos:</strong> A5, A6</p>
+                    <p><strong>Código:</strong> CINE-2025-001</p>
+                    <input type="hidden" name="codigoEntrada" value="CINE-2025-001">
+                </div>
+                <div class="entrada-actions">
+                    <button type="submit" class="btn-small">📥 Descargar</button>
+                </div>
+            </form>
+
+            <form action="../entradas/comprar" method="post" class="entrada-card usada">
+                <div class="entrada-header">
+                    <h3>🎨 Arte Andino Contemporáneo</h3>
+                    <span class="entrada-status usada">Usada</span>
+                </div>
+                <div class="entrada-details">
+                    <p><strong>Fecha:</strong> 15/12/2025 - 10:00</p>
+                    <p><strong>Lugar:</strong> Galería de Arte Central</p>
+                    <p><strong>Entradas:</strong> 1 Adulto</p>
+                    <p><strong>Código:</strong> ART-2025-045</p>
+                    <input type="hidden" name="codigoEntrada" value="ART-2025-045">
+                </div>
+                <div class="entrada-actions">
+                    <button type="submit" class="btn-small">📋 Ver Detalles</button>
+                </div>
+            </form>
+            
+        </div>
+        
+        <div class="entradas-stats">
+            <div class="stat-card">
+                <h4>Entradas Activas</h4>
+                <p class="stat-number">2</p>
+            </div>
+            <div class="stat-card">
+                <h4>Total Gastado</h4>
+                <p class="stat-number">S/ 60.00</p>
+            </div>
+            <div class="stat-card">
+                <h4>Próximo Evento</h4>
+                <p class="stat-number">18/12/2025</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="dashboard-footer">
+        <p>&copy; 2025 Conexión Cultural - Universidad de Arequipa</p>
+    </footer>
+</body>
+</html>

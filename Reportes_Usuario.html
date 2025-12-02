@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Conexión Cultural - Mis Reportes</title>
+    <link rel="stylesheet" href="../Css/Estilos.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../Js/JS_Reportes_Usuario.js" defer></script>
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="header-content">
+            <h1>Conexión Cultural</h1>
+            <p>Estadísticas Generales</p>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="PerfilUsuario.html">Mi Perfil</a></li>
+                <li><a href="MisEntradas.html">Mi Entradas</a></li>
+                <li><a href="Favoritos.html">Favoritos</a></li>
+                <li><a href="DashboardUsuario.html">Inicio</a></li>
+                <li><a href="CineUsuario.html">Cine</a></li>
+                <li><a href="Podcast_Usuario.html">Podcast</a></li>
+                <li><a href="EntradasUsuario.html">Entradas</a></li>
+                <li><a href="Artes_Usuario.html" >Artes</a></li>
+                <li><a href="Reportes_Usuario.html">Mis reportes</a></li>
+                <li><a href="#" id="logoutLink">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="reportes-main">
+        <h2>Estadísticas de la Plataforma</h2>
+
+        <div class="graficos-container">
+            <div class="reporte-chart">
+                <h3>Eventos Más Populares</h3>
+                <canvas id="popularidadChart"></canvas>
+            </div>
+
+            <div class="reporte-chart">
+                <h3>Nivel de Satisfacción</h3>
+                <canvas id="satisfaccionChart"></canvas>
+            </div>
+        </div>
+
+        <section class="resumen">
+            <h3>Resumen General</h3>
+            <ul>
+                <li>🎬 Cine: 85% de asistencia promedio</li>
+                <li>🎨 Arte: 78% de satisfacción</li>
+                <li>🎧 Podcast: 92% de popularidad</li>
+                <li>📅 Total eventos este mes: 12</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="dashboard-footer">
+        <p>&copy; 2025 Conexión Cultural - Universidad de Arequipa</p>
+    </footer>
+</body>
+</html>
